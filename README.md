@@ -24,7 +24,8 @@ The project simulates a Battery Protection Controller that monitors battery volt
 
 ## System Architecture
 
-![Uploading ChatGPT Image Jul 14, 2026, 12_54_41 PM.png…]()
+<img width="1536" height="1024" alt="ChatGPT Image Jul 14, 2026, 12_54_41 PM" src="https://github.com/user-attachments/assets/6b9091b4-b4e3-4f81-8b14-7bc320a01353" />
+
 
 
 ## Implemented Tasks
