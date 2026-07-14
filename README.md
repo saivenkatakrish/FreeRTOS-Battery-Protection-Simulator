@@ -24,23 +24,8 @@ The project simulates a Battery Protection Controller that monitors battery volt
 
 ## System Architecture
 
-```text
-                 Sensor Task
-                 /    |     \
-                /     |      \
-               v      v       v
+![Uploading ChatGPT Image Jul 14, 2026, 12_54_41 PM.png…]()
 
-         LoggerQ   CommQ   FaultQ
-
-             |       |       |
-             v       v       v
-
-        Logger   CommTask  FaultTask
-
-          Heartbeat Timer
-```
-
----
 
 ## Implemented Tasks
 
