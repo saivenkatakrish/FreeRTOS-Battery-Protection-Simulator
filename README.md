@@ -1,44 +1,128 @@
-# RTOS Based Smart Battery Protection Controller
+# FreeRTOS Battery Protection Simulator
 
-## Objective
+## Overview
 
-Develop an industrial-style battery protection controller using FreeRTOS and STM32.
+The FreeRTOS Battery Protection Simulator is an embedded systems project developed using FreeRTOS on a Windows-based simulator.
 
-The system will monitor:
+The project simulates a Battery Protection Controller that monitors battery voltage, current, and temperature while demonstrating key RTOS concepts such as task scheduling, inter-task communication, synchronization, fault handling, and state-machine design.
 
-- Voltage
-- Current
-- Temperature
+---
 
-The system will detect:
+## Features
+
+- FreeRTOS Task Management
+- Queue-Based Inter-Task Communication
+- Mutex Synchronization
+- Software Timers
+- Battery Parameter Monitoring
+- Fault Detection and Fault Latching
+- State Machine Implementation
+- Simulated Communication Interface
+- Heartbeat Monitoring
+
+---
+
+## System Architecture
+
+```text
+                 Sensor Task
+                 /    |     \
+                /     |      \
+               v      v       v
+
+         LoggerQ   CommQ   FaultQ
+
+             |       |       |
+             v       v       v
+
+        Logger   CommTask  FaultTask
+
+          Heartbeat Timer
+```
+
+---
+
+## Implemented Tasks
+
+| Task | Description |
+|--------|------------|
+| Sensor Task | Simulates battery voltage, current, and temperature |
+| Logger Task | Logs battery parameters and system status |
+| Comm Task | Simulates communication output |
+| Fault Task | Detects and handles fault conditions |
+| Heartbeat Timer | Indicates system activity |
+
+---
+
+## Fault Conditions
+
+The simulator detects the following battery fault conditions:
 
 - Over Voltage
-- Under Voltage
 - Over Current
 - Over Temperature
 
-The system will provide:
+When a fault occurs:
 
-- UART Command Line Interface
-- Fault Logging
-- Watchdog Monitoring
-- Real-Time Task Scheduling
+- Fault is latched
+- System state changes to FAULT
+- Protection action is triggered
+- Fault information is logged
 
-## Development Phases
+---
 
-### Phase 1
-Windows FreeRTOS Simulation
+## RTOS Concepts Demonstrated
 
-### Phase 2
-STM32 Porting
+- Tasks
+- Scheduler
+- Queues
+- Mutexes
+- Software Timers
+- State Machine Design
+- Fault Management
+- Inter-Task Communication
 
-### Phase 3
-Hardware Integration
+---
 
-## Planned Tasks
+## Current Status
 
+### Completed
+
+- FreeRTOS Windows Simulator Setup
 - Sensor Task
-- Fault Task
 - Logger Task
-- UART Task
-- Watchdog Task
+- Communication Task
+- Fault Task
+- Queue-Based Communication
+- Mutex Protection
+- Software Timer Heartbeat
+- Fault Detection and Latching
+- System State Management
+
+---
+
+## Future Enhancements
+
+- STM32 Hardware Porting
+- ADC-Based Sensor Integration
+- UART Driver Integration
+- GPIO Driver Development
+- Watchdog Integration
+- Relay Control Implementation
+
+---
+
+## Technologies Used
+
+- C Programming
+- FreeRTOS
+- Windows FreeRTOS Port
+- Embedded Systems Design
+
+---
+
+## Author
+
+Sai Venkata Krishna
+
+Embedded Systems | Firmware Development | FreeRTOS
